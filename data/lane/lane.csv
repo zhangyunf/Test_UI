@@ -1,0 +1,4 @@
+laneNum,isRun,Checkpoints,,
+SY_001,YES,,SY_test_001,SY_test_002
+SY_002,,,SY_test_001,
+SY_003,YES,,SY_test_002,

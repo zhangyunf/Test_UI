@@ -1,0 +1,5 @@
+CaseNum,Checkpoints,Checkpoints Description,搜索文本框,百度一下按钮,title
+1,搜索文本框,输入中文成功,中国,NO,
+2,搜索文本框,输入中文，并且搜索成功,selenium,YES,
+【SY_003】-【test_2】-001,title验证,,,,中国_百度搜索
+【SY_002】-【test_1】-001,title验证,,,,中国_百度搜索

@@ -1,0 +1,4 @@
+elementName,elementType,elementPath,https://www.baidu.com,百度一下，你就知道
+搜索文本框,By.ID,kw,,
+百度一下按钮,By.ID,su,,
+title,,,,
