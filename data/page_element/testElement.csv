@@ -1,4 +1,8 @@
-elementName,elementType,elementPath,https://www.baidu.com,百度一下，你就知道
-搜索文本框,By.ID,kw,,
-百度一下按钮,By.ID,su,,
-title,,,,
+elementName,elementType,elementPath
+密码登录按钮,By.XPATH,"//*[contains(text(),""密码登录"")]"
+账号文本框,By.XPATH,//*[@placeholder="请输入手机号/邮箱"]
+密码文本框,By.XPATH,//*[@placeholder="请输入密码"]
+登录按钮,By.XPATH,//li[@class="login-btn-li"]/button
+滑块验证码,,
+登录错误提示元素,By.XPATH,//em[@class="err-children"]
+手机格式错误提示元素,By.XPATH,//em[@class="err-children"]

@@ -1,3 +1,0 @@
-elementName,elementType,elementPath,http://asset.qb.com/all,用户登陆|QB.com-全球优质数字资产交易平台
-法币账户按钮,By.LINK,法币账户,,
-BTC总金额显示框,By.XPATH,//*[@id="app"]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]/table/tbody/tr[1]/td[2]/span,,

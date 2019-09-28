@@ -23,7 +23,7 @@ class csvOperation(object):
 
     def get_col(self, cloName):
         '''
-        获取
+        获取控件名称
         :param cloName:
         :return:
         '''

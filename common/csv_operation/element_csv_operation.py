@@ -3,27 +3,16 @@ from common.util.csv_operation import csvOperation
 from common.util.path_config import pathConfig
 
 class elementCsvOperation(csvOperation):
-    def __init__(self, caseNum):
+    def __init__(self, caseL):
         pathcon = pathConfig()
-        caseList = caseNum.split("-")
-        caseL = caseList[1].split("_")
         path = pathcon.elementPath + caseL[0][1:] + "Element.csv"
         super(elementCsvOperation, self).__init__(path)
 
-    @property
-    def get_url(self):
-        '''
-        获取网址
-        :return:
-        '''
-        lis = self.reader["elementName"]
-        return lis[-2]
+    def get_control(self, control):
+        cont_list = self.reader[control.name]
+        control.set_find_element_type(cont_list[1])
+        control.set_find_element_value(cont_list[2])
 
-    @property
-    def get_url_title(self):
-        '''
-        获取网址标题
-        :return:
-        '''
-        lis = self.reader["elementName"]
-        return lis[-1]
+if __name__ == '__main__':
+    a = elementCsvOperation("1")
+    a.get_control()

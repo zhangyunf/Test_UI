@@ -1,0 +1,6 @@
+elementName,elementType,elementPath
+币币交易按钮,By.LINK_TEXT,币币交易
+法币交易按钮,By.LINK_TEXT,法币交易
+套利宝按钮,By.LINK_TEXT,套利宝
+Queen按钮,By.LINK_TEXT,Queen
+上币申请按钮,By.LINK_TEXT,上币申请

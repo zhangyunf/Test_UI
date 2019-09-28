@@ -18,18 +18,6 @@ class exceOperation(object):
         self.st = self.wb[sheet_name]
         return self.st
 
-    def get_datas(self, sheet_name):
-        st = self.open_sheet(sheet_name)
-        self.reader = {}
-        for row in st.rows:
-            lis = []
-            for i in row:
-                lis.append(i)
-            self.reader.update({lis[0]: lis})
-
-    def get_readers(self):
-        return self.reader
-
     def get_value(self, cellNum):
         '''
         获取cell的值

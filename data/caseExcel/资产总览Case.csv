@@ -1,3 +1,0 @@
-CaseNum,Checkpoints,Checkpoints Description,资金划转按钮,选择币种按钮,BTC币种按钮,ETH币种按钮,USDT币种按钮,前置账户选择按钮,前置币币账户按钮,前置法币账户按钮,前置套利宝账户按钮,后置账户选择按钮,后置币币账户按钮,后置法币账户按钮,后置套利宝账户按钮,划转数量文本框,划转数量全部按钮,资金划转确定按钮
-1,账户总览,验证币币账户转法币账户功能正常,YES,YES,YES,,,YES,YES,,,YES,,YES,,1,,YES
-2,账户总览,验证法币账户转币币账户功能正常,YES,YES,YES,,,YES,,YES,,YES,YES,,,1,,YES

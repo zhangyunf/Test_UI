@@ -1,6 +1,6 @@
 #-*- endcoding:utf-8 -*-
 import configparser
-file_name = r"./data/config/config.ini"
+file_name = r"./config/config.ini"
 class configOperation(object):
     def __init__(self):
         self.conf = configparser.ConfigParser()

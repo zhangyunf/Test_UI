@@ -1,5 +1,5 @@
 #-*- endcoding:utf-8 -*-
-from common.util.config_operation import configOperation
+from .config_operation import configOperation
 section = "path"
 
 class pathConfig(configOperation):

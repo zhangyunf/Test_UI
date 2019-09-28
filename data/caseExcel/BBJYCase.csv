@@ -1,0 +1,3 @@
+CaseNum,Checkpoints,Checkpoints Description,url,限价委托按钮,价格文本框,数量文本框,买入按钮,买入成功提示元素,买入数量小于最小交易量提示元素,当前委托交易对比较,当前委托类型比较,当前委托委托价比较,当前委托委托数比较,sleep,撤单按钮,sleep,撤单成功提示元素
+1,币币交易,"下单成功,撤销成功",http://trade.qb.com/?tradePair=qb/usdt,YES,1,100,YES,下单成功,,QB/USDT,买入,1.000000,100.00,5,YES,1,撤销成功
+2,币币交易,下单数量小于最小交易数量,http://trade.qb.com/?tradePair=qb/usdt,YES,1,99,YES,,不能低于最小交易量100QB,,,,,,,,

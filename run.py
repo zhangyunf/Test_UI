@@ -1,57 +1,63 @@
 #-*- endcoding:utf-8 -*-
 from selenium import webdriver
+from common.util.screen_shot import *
 from page.base_page import basePage
-from common.excel_operation.lane_excel_operation import laneExcelOperation
+from common.excel_operation.set_excel_operation import laneExcelOperation
 from common.util.log import *
 from common.data.global_value import colorSingleton
+
 
 class main(object):
 
     def __init__(self):
         self.browser = webdriver.Chrome()
-        self.testP = basePage(self.browser)
+        self.baseP = basePage(self.browser)
         self.lane = laneExcelOperation()
-        self.lane.get_datas("Sheet1")
+        self.lane.get_datas()
         self.colorSingleton = colorSingleton()
 
     def run(self):
         '''
         运行需要执行的泳道
         '''
-        for lanNum, caseList in self.lane.reader.items():
-            # 表头不执行
-            if self.lane.get_value(lanNum) != "laneNum":
-                # 判断该泳道是否执行
-                if self.lane.is_run(caseList):
-                    log("泳道%s开始执行" % self.lane.get_value(lanNum))
-                    for test in caseList[3:]:
-                        #初始化案例背景颜色
-                        self.colorSingleton.change_success()
-                        # 判断是否为空
-                        if self.lane.get_value(test) != None:
-                            try:
-                                self.testP.test_progress(self.lane.get_value(test), lanNum)
-                                self.lane.set_cell_color(test)
-                            except Exception:
-                                log("案例%s执行失败" % self.lane.get_value(test))
-                                self.lane.set_cell_color(test)
-                                break
-                    log("泳道%s结束执行" % lanNum.value)
-        self.browser.quit()
+        # 清空截图
+        clear_screenshot()
+        for set in self.lane.set_list:
+            log("开始执行%s测试集" % set.name)
+            self.run_set(set)
+
+    def run_set(self, set):
+        try:
+            for scene in set.scene_list:
+                log("开始执行%s泳道" % scene.name)
+                self.run_case(scene)
+                set.case_num += scene.case_num
+                set.case_success += scene.case_success
+                set.case_false += scene.case_false
+                set.non_execution += scene.non_execution
+
+        finally:
+            self.browser.quit()
+
+    def run_case(self, scene):
+        case_list = scene.case_list
+        scene.case_num = len(case_list)
+        line_num = scene.name
+        for case in case_list:
+
+            # 初始化案例背景颜色
+            self.colorSingleton.change_success()
+            # 判断是否为空
+            if case != None:
+                self.baseP.test_progress(case, line_num, self.browser)
+                if case.result == True:
+                    scene.case_success += 1
+                elif case.result == False:
+                    scene.case_false += 1
+                    break
+        scene.non_execution = scene.case_num - scene.case_success - scene.case_false
 
 if __name__ == "__main__":
     run = main()
     run.run()
-
-# mySelenium = my_selenium.MySelenium(browser)
-# mySelenium.open_url("http://www.qb.com/", "QB.com-全球优质数字资产交易平台")
-# mySelenium.set_max()
-# mySelenium.get_cookie("userToken")
-# mySelenium.delete_cookie("userToken")
-# mySelenium.add_cookie("userToken",
-#                       '{"value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzA3OTY3NjIyNjQ3OTE0NDk2LCJwaCI6IiIsImVtIjoiMzBAZi5jb20iLCJjIjoiIiwiZGUiOiJXaW5kb3dzIDEwL0Nocm9tZTcxLjAuMzU3OC45OCIsImlwIjoiMTkyLjE2OC4xMTMuNDIiLCJvcyI6M30.Etuwc8A-OH3pyXFV4eL-mc_IhL_lpDOc8fz8aZQ0wjY","domain":".qb.com","path":"/","time":false}')
-# mySelenium.refresh()
-# time.sleep(30)
-# mySelenium.get_screenshot()
-# browser.quit()
 

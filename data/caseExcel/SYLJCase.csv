@@ -1,0 +1,6 @@
+CaseNum,Checkpoints,Checkpoints Description,url,币币交易按钮,法币交易按钮,套利宝按钮,Queen按钮,上币申请按钮
+1,首页链接,成功打开币币交易页面,http://www.qb.com/,YES,,,,
+2,首页链接,成功打开法币交易页面,http://www.qb.com/,,YES,,,
+3,首页链接,成功打开套利宝页面,http://www.qb.com/,,,YES,,
+4,首页链接,成功打开Queen页面,http://www.qb.com/,,,,YES,
+5,首页链接,成功打开上币申请页面,http://www.qb.com/,,,,,YES
