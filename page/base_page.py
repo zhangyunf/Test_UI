@@ -3,7 +3,7 @@ from common.util import my_selenium
 from common.util.log import *
 from common.data.global_value import colorSingleton
 from common.util.slider_verification import CrackSlider
-
+import time
 class basePage(object):
     def __init__(self, browser):
         self.mySelenium = my_selenium.MySelenium(browser)
