@@ -16,12 +16,13 @@ class main(object):
         self.lane.get_datas()
         self.colorSingleton = colorSingleton()
 
+    @clear_screenshot
     def run(self):
         '''
         运行需要执行的泳道
         '''
         # 清空截图
-        clear_screenshot()
+
         for set in self.lane.set_list:
             log("开始执行%s测试集" % set.name)
             self.run_set(set)

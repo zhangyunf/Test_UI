@@ -122,7 +122,7 @@ class _MouseToOperations(_ElementDisplayWaiting):
         """
         ele = self.show_element(element=element)
         ele.clear()
-        self.mouse_suppert.send_keys_to_element(element=ele, *keys_to_send)
+        self.mouse_suppert.send_keys_to_element(element=ele, *keys_to_send).perform()
 
 @dataclass
 class _OtherBrowserOperationClass(_MouseToOperations):
