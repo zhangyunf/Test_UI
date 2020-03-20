@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c394ab0-3dad-4fb8-a607-96c12ee8e45b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/测试日志.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/测试日志.log" afterDir="false" />
-    </list>
+    <list default="true" id="0c394ab0-3dad-4fb8-a607-96c12ee8e45b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,7 +208,7 @@
       <updated>1545736810418</updated>
       <workItem from="1577612787380" duration="209000" />
       <workItem from="1584279567208" duration="232000" />
-      <workItem from="1584708390039" duration="158000" />
+      <workItem from="1584708390039" duration="197000" />
     </task>
     <task id="LOCAL-00001" summary="更新装饰器">
       <created>1571803621736</created>
@@ -221,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571803621736</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更新装饰器">
+      <created>1584708582413</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584708582413</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -244,6 +247,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新装饰器" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="314" y="23" width="812" height="800" key="CommitChangelistDialog2" timestamp="1584708580358">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="314" y="23" width="812" height="800" key="CommitChangelistDialog2/-1920.-157.1920.1057/0.23.1440.800@0.23.1440.800" timestamp="1584708580358" />
     <state width="1398" height="291" key="GridCell.Tab.0.bottom" timestamp="1577613019786">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
