@@ -2,8 +2,9 @@
 from common.util import my_selenium
 from common.util.log import *
 from common.data.global_value import colorSingleton
-from common.util.slider_verification import CrackSlider
+# from common.util.slider_verification import CrackSlider
 import time
+
 class basePage(object):
     def __init__(self, browser):
         self.mySelenium = my_selenium.MySelenium(browser)
@@ -42,8 +43,9 @@ class basePage(object):
 
     def crack_slider(self, control, driver):
         if(control.value):
-            c = CrackSlider(driver)
-            c.crack_slider()
+            pass
+            # c = CrackSlider(driver)
+            # c.crack_slider()
 
 
     def operation_controls(self, case, line_num, driver):

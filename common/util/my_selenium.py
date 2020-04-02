@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from .log import log
 from model.MyExecption import UntilNoElementOrTimeoutError
+import functools
 # 重复定位一个元素次数
 FINDELELMENTTIMES = 3
 
@@ -27,11 +28,12 @@ class _ElementDisplayWaiting(object):
 
     def show_element(self, element):
         """
-        判断单个元素在规定时间内是否出现
+        判断单个元素在规定时间内是否存在
         :param element: 定位元素的方式
         :return: 已经出现的元素
         """
-        return self.action.until(EC.presence_of_element_located((eval(element.find_element_type), element.find_element_value)), message=UntilNoElementOrTimeoutError(self.timeout, element))
+        ele = self.action.until(EC.presence_of_element_located((eval(element.find_element_type), element.find_element_value)), message=UntilNoElementOrTimeoutError(self.timeout, element))
+        return ele
 
     def show_elemets(self, elements):
         """
@@ -71,6 +73,12 @@ class _MouseToOperations(_ElementDisplayWaiting):
     def __post_init__(self):
         super(_MouseToOperations, self).__post_init__()
         self.mouse_suppert = ActionChains(self.driver)
+
+
+    # def reset_actions(self):
+    #     @functools.wraps
+    #     def warrper(func):
+    #         pass
 
 
     def click(self, element):
@@ -122,7 +130,7 @@ class _MouseToOperations(_ElementDisplayWaiting):
         """
         ele = self.show_element(element=element)
         ele.clear()
-        self.mouse_suppert.send_keys_to_element(element=ele, *keys_to_send).perform()
+        ele.send_keys(*keys_to_send)
 
 @dataclass
 class _OtherBrowserOperationClass(_MouseToOperations):

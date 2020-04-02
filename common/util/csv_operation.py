@@ -1,18 +1,17 @@
 #-*- endcoding:utf-8 -*-
 import csv
-
 class csvOperation(object):
 
     def __init__(self, file_path):
         self.reader = {}
         try:
-            with open(file_path, "r") as csvfile:
+            with open(file_path, "r", encoding="gbk") as csvfile:
                 reader = csv.reader(csvfile)
                 for row in reader:
                     if len(row) != 0:
                         self.reader.update({row[0]: row})
         except:
-            with open(file_path, "rb", encoding="utf-8") as csvfile:
+            with open(file_path, "rb", encoding="gbk") as csvfile:
                 reader = csv.reader(csvfile)
                 for row in reader:
                     if len(row) != 0:
@@ -37,6 +36,5 @@ class csvOperation(object):
 
 
 if __name__ == "__main__":
-    c = csvOperation(r"D:\接口\Test_UI\data\caseExcel\testCase.csv")
-    v = c.reader["【SY_001】-【test_1】-001"]
-    print(v)
+    c = csvOperation(r"/Users/a/Desktop/study/Test_UI/data/caseExcel/testCase.csv")
+    print(c)

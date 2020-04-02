@@ -6,11 +6,13 @@ from common.excel_operation.set_excel_operation import laneExcelOperation
 from common.util.log import *
 from common.data.global_value import colorSingleton
 
+#chromedriver的存放路径,MAC版的如果是其它系统请更换
+ExECUTABLE_PATH = './driver/chromedriver'
 
 class main(object):
 
     def __init__(self):
-        self.browser = webdriver.Chrome()
+        self.browser = webdriver.Chrome(executable_path=ExECUTABLE_PATH)
         self.baseP = basePage(self.browser)
         self.lane = laneExcelOperation()
         self.lane.get_datas()
